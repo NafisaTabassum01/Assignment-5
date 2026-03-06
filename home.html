@@ -25,10 +25,10 @@
 
 </head>
 <body class="bg-[#F8FAFC]">
-    <header class="bg-white flex justify-between px-8 border border-gray-300 py-3">
+   <header class="bg-white flex flex-col md:flex-row md:justify-between px-8 border border-gray-300 py-3 gap-3">
         <div class="flex gap-2">
             <img src="./assets/github-logo.png" alt="" class="h-[36px] w-[36px]">
-            <h2 class="font-semibold text-[24px]">GitHub Issues Tracker</h2>
+            <h2 class="font-semibold text-[24px] sm:text-[20px]">GitHub Issues Tracker</h2>
         </div>
    
    
@@ -36,8 +36,6 @@
         
    <div class="flex gap-4">
 
-<!-- <div class="join">
-</div> -->
 <div>
        <label class="input">
   <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -61,26 +59,26 @@
     </header>
     <section class="w-10/12 mx-auto mt-10">
         <div class="bg-white p-4 mb-5 rounded-lg">
-            <button class="btn text-[16px] mr-3 font-semibold text-white bg-[#4A00FF] w-[120px]">All</button>
-            <button class="btn text-[16px] mr-3 bg-white font-semibold text-[#64748B] w-[120px]">Open</button>
-            <button class="btn text-[16px] font-semibold bg-white text-[#64748B] w-[120px]">Close</button>
+            <button onclick="loadCards()" class="btn text-[16px] mr-3 font-semibold text-white bg-[#4A00FF] w-24">All</button>
+            <button class="btn text-[16px] mr-3 bg-white font-semibold text-[#64748B] w-24">Open</button>
+            <button class="btn text-[16px] font-semibold bg-white text-[#64748B] w-24">Close</button>
         </div>
         
         <section class="rounded-lg">
             <div class="grid grid-cols-2 px-4 py-3 bg-white rounded-lg border border-gray-200 shadow-md">
                 <div class="flex">
-                    <div class="bg-[#ECE4FF] rounded-full w-[50px] h-[50px] my-auto "><img src="assets/Aperture.png" alt="" class="my-2 mx-auto"></div>
+                    <div class="bg-[#ECE4FF] rounded-full w-10 h-10 my-auto "><img src="assets/Aperture.png" alt="" class="my-1.5 mx-auto"></div>
                     <div class="pl-2"><p class="font-semibold text-[20px]">50 Issues</p>
-                    <p class="text-[16px] text-[364748B]">Track and manage your project issues</p></div>
+                    <p class="text-[16px] text-[#64748B]">Track and manage your project issues</p></div>
                 </div>
-                <div class="flex p-4 ml-25 pl-80 justify-around">
+                <div class="flex p-4 justify-end gap-2">
                     <div class="w-[10px] h-[10px] bg-[#00A96E] rounded-full mt-2"></div> <span>Open</span>
-                    <div class="w-[10px] h-[10px] bg-[#A855F7] rounded-full mt-2 ml-3"></div> <span>Close</span>
+                    <div class="w-[10px] h-[10px] bg-[#A855F7] rounded-full mt-2"></div> <span>Close</span>
                 </div>
             </div>
     <!-------------------- cards------------ -->
             
-    <section id="card-container" class="bg-[#FBFBFB]">
+    <section id="card-container" class="bg-[#FBFBFB] grid grid-cols-4 gap-4 mt-8 p-10 shadow-lg">
               
     
             </section>
