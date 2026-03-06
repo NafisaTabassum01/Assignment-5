@@ -9,7 +9,7 @@ console.log(userName)
 console.log(pin)
 
 if(userName=="admin" && pin=="admin123"){
-window.location.assign("/home.html")
+window.location.assign("home.html")
 }
 else{
     alert("Login failed");
