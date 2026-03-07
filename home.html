@@ -16,11 +16,13 @@
 
 <!-- font awsome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<link rel="stylesheet" href="style.css">
 <style>
     *{
         font-family:"Geist", sans-serif;
+
     }
+
 </style>
 
 </head>
@@ -59,9 +61,9 @@
     </header>
     <section class="w-10/12 mx-auto mt-10">
         <div class="bg-white p-4 mb-5 rounded-lg">
-            <button id="allbtn" onclick="loadCards()" class="btn text-[16px] mr-3 font-semibold text-white bg-[#4A00FF] w-24">All</button>
-            <button id="openbtn" onclick="loadOpenCards()" class="btn text-[16px] mr-3 bg-white font-semibold text-[#64748B] w-24">Open</button>
-            <button id="closebtn" onclick="loadCloseCards()" class="btn text-[16px] font-semibold bg-white text-[#64748B] w-24">Close</button>
+            <button id="all-btn" onclick="loadCards()" class="btn load-btn text-[16px] mr-3 font-semibold text-white w-24">All</button>
+            <button id="open-btn" onclick="loadOpenCards()" class="btn load-btn text-[16px] mr-3 bg-white font-semibold text-[#64748B] w-24">Open</button>
+            <button id="close-btn" onclick="loadCloseCards()" class="btn load-btn text-[16px] font-semibold bg-white text-[#64748B] w-24">Close</button>
         </div>
         
         <section class="rounded-lg">

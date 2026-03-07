@@ -3,9 +3,22 @@ const loadCards=() =>{
     fetch(url)
     .then((res)=>res.json())
     .then((data)=>{
+        removeActive()
+
+ const allBtn=document.getElementById("all-btn");
+        console.log(allBtn)
+        allBtn.classList.add("active")
+       
+
         displayCards(data.data);
     })
 
+}
+
+const removeActive=()=>{
+    const loadButtons=document.querySelectorAll(".load-btn")
+    // console.log(loadButtons)
+    loadButtons.forEach(btn=>btn.classList.remove("active"))
 }
 
 // -----------------closed cards---------------------------
@@ -16,6 +29,11 @@ const loadCloseCards=() =>{
     .then((res)=>res.json())
     .then((data)=>{
         const openCards = data.data.filter(card => card.status === "closed");
+        removeActive()
+        const closeBtn=document.getElementById("close-btn");
+        console.log(closeBtn)
+        closeBtn.classList.add("active")
+        
         displayOpenCards(openCards)
     })
 
@@ -109,6 +127,12 @@ const loadOpenCards=() =>{
     .then((res)=>res.json())
     .then((data)=>{
         const openCards = data.data.filter(card => card.status === "open");
+               removeActive()
+
+        const openBtn=document.getElementById("open-btn");
+        console.log(openBtn)
+        openBtn.classList.add("active")
+       
         displayOpenCards(openCards)
     })
 
