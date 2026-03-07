@@ -16,6 +16,34 @@ const loadCards=() =>{
 
 }
 
+// ---------search-box--------------------
+
+const searchCard = () =>{
+
+    const searchValue = document.getElementById("search-card").value;
+
+    if(searchValue === ""){
+        loadCards();
+        return;
+    }
+
+    const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`;
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+
+            removeActive();
+            document.getElementById("all-btn").classList.add("active");
+
+            projectAmount.innerText = data.data.length;
+
+            displayCards(data.data);
+        });
+
+}
+
+
 // ----task-count--------
 const projectAmount=document.getElementById("project-amount")
 
