@@ -316,7 +316,7 @@ textClass="text-white"
              <div class="badge badge-success text-white font-medium text-[12px] rounded-2xl">${details.data.status}</div>
              <div class="w-1 h-1 rounded-full bg-[#64748B] mt-2"></div>
             <p class="text-[12px] text-[#64748B]">Opened by ${details.data.author}</p>
-                <div class="w-1 h-1 rounded-full bg-[#64748B] mt-2"></div><p class="text-[12px] text-[#64748B]">22/02/2026</p>
+                <div class="w-1 h-1 rounded-full bg-[#64748B] mt-2"></div><p class="text-[12px] text-[#64748B]">${details.data.createdAt}</p>
            </div>
 
     
