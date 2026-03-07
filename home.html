@@ -59,9 +59,9 @@
     </header>
     <section class="w-10/12 mx-auto mt-10">
         <div class="bg-white p-4 mb-5 rounded-lg">
-            <button onclick="loadCards()" class="btn text-[16px] mr-3 font-semibold text-white bg-[#4A00FF] w-24">All</button>
-            <button onclick="loadOpenCards()" class="btn text-[16px] mr-3 bg-white font-semibold text-[#64748B] w-24">Open</button>
-            <button onclick="loadCloseCards()" class="btn text-[16px] font-semibold bg-white text-[#64748B] w-24">Close</button>
+            <button id="allbtn" onclick="loadCards()" class="btn text-[16px] mr-3 font-semibold text-white bg-[#4A00FF] w-24">All</button>
+            <button id="openbtn" onclick="loadOpenCards()" class="btn text-[16px] mr-3 bg-white font-semibold text-[#64748B] w-24">Open</button>
+            <button id="closebtn" onclick="loadCloseCards()" class="btn text-[16px] font-semibold bg-white text-[#64748B] w-24">Close</button>
         </div>
         
         <section class="rounded-lg">
@@ -79,11 +79,8 @@
     <!-------------------- cards------------ -->
             
     <section id="card-container" class="bg-[#FBFBFB] grid grid-cols-1 gap-4 mt-8 p-10 md:grid-cols-2 lg:grid-cols-4 shadow-lg"></section>
-    <!-- open card section -->
-    <!-- <section id="Opencard-container" class="bg-[#FBFBFB] grid grid-cols-1 gap-4 mt-8 p-10 md:grid-cols-2 lg:grid-cols-4 shadow-lg"></section>
-        </section> -->
+    
     </section>
-
     <script src="./cards.js"></script>
 </body>
 </html>
