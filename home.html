@@ -61,7 +61,7 @@
     </header>
     <section class="w-10/12 mx-auto mt-10">
         <div class="bg-white p-4 mb-5 rounded-lg">
-            <button id="all-btn" onclick="loadCards()" class="btn load-btn text-[16px] mr-3 font-semibold text-white w-24">All</button>
+            <button id="all-btn" onclick="loadCards()" class="btn load-btn text-[16px] mr-3 font-semibold bg-white text-[#64748B] w-24">All</button>
             <button id="open-btn" onclick="loadOpenCards()" class="btn load-btn text-[16px] mr-3 bg-white font-semibold text-[#64748B] w-24">Open</button>
             <button id="close-btn" onclick="loadCloseCards()" class="btn load-btn text-[16px] font-semibold bg-white text-[#64748B] w-24">Close</button>
         </div>
@@ -70,7 +70,8 @@
             <div class="grid grid-cols-2 px-4 py-3 bg-white rounded-lg border border-gray-200 shadow-md">
                 <div class="flex">
                     <div class="bg-[#ECE4FF] rounded-full w-10 h-10 my-auto "><img src="assets/Aperture.png" alt="" class="my-1.5 mx-auto"></div>
-                    <div class="pl-2"><p class="font-semibold text-[20px]">50 Issues</p>
+                    <div class="pl-2"><p class="font-semibold text-[20px]">
+                        <span id="project-amount">50</span> Issues</p>
                     <p class="text-[16px] text-[#64748B]">Track and manage your project issues</p></div>
                 </div>
                 <div class="flex p-4 justify-end gap-2">

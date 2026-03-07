@@ -28,13 +28,13 @@ const loadCloseCards=() =>{
     fetch(url)
     .then((res)=>res.json())
     .then((data)=>{
-        const openCards = data.data.filter(card => card.status === "closed");
+        const closeCards = data.data.filter(card => card.status === "closed");
         removeActive()
         const closeBtn=document.getElementById("close-btn");
         console.log(closeBtn)
         closeBtn.classList.add("active")
         
-        displayOpenCards(openCards)
+        displayCloseCards(closeCards);
     })
 
 
@@ -48,6 +48,7 @@ const displayCloseCards=(closeCards)=>{
     closeCards.forEach((closeCard)=>{
 let bgClass="";
 let textClass="";
+let borderTop="";
 
 if(closeCard.priority==="high"){
 bgClass="bg-[#FEECEC]";
@@ -63,10 +64,20 @@ bgClass="bg-[#EEEFF2]";
 textClass="text-[#9CA3AF]"
 
 }
+if(closeCard.status==="open"){
+    borderTop="border-[#00A96E]"
+
+}
+else if(closeCard.status==="closed"){
+    borderTop="border-[#7E22CE]"
+
+
+}
+
 
      const closeCardBody=document.createElement("div");
        closeCardBody.innerHTML=`
-       <div id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 border-[#00A96E]">
+       <div id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
     <div class="flex justify-between">
     <img src="./assets/${closeCard.status}- Status .png" alt="" class="h-5">
 
@@ -147,6 +158,7 @@ const displayOpenCards=(openCards)=>{
     openCards.forEach((openCard)=>{
 let bgClass="";
 let textClass="";
+let borderTop="";
 
 if(openCard.priority==="high"){
 bgClass="bg-[#FEECEC]";
@@ -162,10 +174,19 @@ bgClass="bg-[#EEEFF2]";
 textClass="text-[#9CA3AF]"
 
 }
+if(openCard.status==="open"){
+    borderTop="border-[#00A96E]"
+
+}
+else if(openCard.status==="closed"){
+    borderTop="border-[#7E22CE]"
+
+}
+
 
      const openCardBody=document.createElement("div");
        openCardBody.innerHTML=`
-       <div id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 border-[#00A96E]">
+       <div id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
     <div class="flex justify-between">
     <img src="./assets/${openCard.status}- Status .png" alt="" class="h-5">
   <div class="badge ${bgClass} ${textClass} mb-4 py-3">${openCard.priority}</div></div>
@@ -227,6 +248,7 @@ const displayCards=(cards)=>{
 
         let bgClass="";
         let textClass="";
+        let borderTop="";
 
 if(card.priority==="high"){
 bgClass="bg-[#FEECEC]";
@@ -242,11 +264,20 @@ bgClass="bg-[#EEEFF2]";
 textClass="text-[#9CA3AF]"
 
 }
+if(card.status==="open"){
+    borderTop="border-[#00A96E]"
+
+}
+else if(card.status==="closed"){
+    borderTop="border-[#7E22CE]"
+
+}
+
 
 
      const cardBody=document.createElement("div");
         cardBody.innerHTML=`
-        <div id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 border-[#00A96E]">
+<div id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
     <div class="flex justify-between">
     <img src="./assets/${card.status}- Status .png" alt="" class="h-5">
 
