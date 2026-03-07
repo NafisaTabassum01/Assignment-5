@@ -88,7 +88,7 @@ else if(closeCard.status==="closed"){
 
      const closeCardBody=document.createElement("div");
        closeCardBody.innerHTML=`
-       <div id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
+       <div onclick="loadCardDetail(${closeCard.id})" id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
     <div class="flex justify-between">
     <img src="./assets/${closeCard.status}- Status .png" alt="" class="h-5">
 
@@ -200,7 +200,7 @@ else if(openCard.status==="closed"){
 
      const openCardBody=document.createElement("div");
        openCardBody.innerHTML=`
-       <div id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
+       <div onclick="loadCardDetail(${openCard.id})" id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
     <div class="flex justify-between">
     <img src="./assets/${openCard.status}- Status .png" alt="" class="h-5">
   <div class="badge ${bgClass} ${textClass} mb-4 py-3">${openCard.priority}</div></div>
@@ -253,6 +253,117 @@ cardContainer.append(openCardBody);
 
 }
 
+// ----------------------- card modal-------------------
+
+const loadCardDetail=async(id)=>{
+     const url =`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`
+    //  console.log(url);
+     const res=await fetch(url)
+     const details=await res.json()
+        //   console.log(details.data);
+       const detailsBox=document.getElementById("modal-card")
+       
+        let bgClass="";
+        let textClass="";
+
+if(details.data.priority==="high"){
+bgClass="bg-[#EF4444]";
+textClass="text-white"
+}
+else if(details.data.priority==="medium"){
+bgClass="bg-[#eab308]";
+textClass="text-white"
+
+}
+else if(details.data.priority==="low"){
+bgClass="bg-[#6b7280]";
+textClass="text-white"
+
+}
+       
+       detailsBox.innerHTML=`
+        <div>
+            <h2 class="font-bold text0[24px]">${details.data.title}</h2>
+           <div class="flex gap-1 pt-2">
+             <div class="badge badge-success text-white font-medium text-[12px] rounded-2xl">${details.data.status}</div>
+             <div class="w-1 h-1 rounded-full bg-[#64748B] mt-2"></div>
+            <p class="text-[12px] text-[#64748B]">Opened by ${details.data.author}</p>
+                <div class="w-1 h-1 rounded-full bg-[#64748B] mt-2"></div><p class="text-[12px] text-[#64748B]">22/02/2026</p>
+           </div>
+
+    
+
+<div class="flex gap-2 pt-2">
+  ${details.data.labels.map(label => {
+
+let bgLabelClass="";
+let textLabelClass="";
+let borderLabelClass="";
+
+
+if(label==="bug"){
+bgLabelClass="bg-[#FECACA]";
+textLabelClass="text-[#EF4444]";
+borderLabelClass="border-[#dc2626]";
+
+}
+else if(label==="help wanted"){
+bgLabelClass="bg-[#FFF6D1]";
+textLabelClass="text-[#F59E0B]";
+borderLabelClass="border-[#eab308]";
+
+}
+else if(label==="enhancement"){
+bgLabelClass="bg-[#BBF7D0]";
+textLabelClass="text-[#16A34A]";
+borderLabelClass="border-[#16a34a]";
+
+}
+else if(label==="good first issue"){
+bgLabelClass="bg-[#e9d5ff]";
+textLabelClass="text-[#9333ea]";
+borderLabelClass="border-[#9333ea]";
+
+}
+else if(label==="documentation"){
+bgLabelClass="bg-[#a5f3fc]";
+textLabelClass="text-[#0e7490]";
+borderLabelClass="border-[#0891b2]";
+
+
+}
+
+
+return `<div class="badge border ${bgLabelClass} ${textLabelClass} ${borderLabelClass} text-[12px]">${label}</div>`}).join('')}
+
+</div>      
+           </div>
+
+           <p class="text-[16px] text-[#64748B] pt-4">${details.data.description}</p>
+           
+           <div class="bg-[#F8FAFC] rounded-xl my-4 mx-2 p-4 grid grid-cols-2">
+
+            <div class="">
+                <p class="text-[16px] text-[#64748B]">Assignee:</p>
+                <p class="text-16px font-semibold">${details.data.assignee ? details.data.assignee:"NOT FOUND"}</p>
+            </div>
+
+            <div>
+                <p class="text-[16px] text-[#64748B]">Priority:</p>
+                <div class="badge rounded-2xl ${bgClass} ${textClass} text-[12px]">${details.data.priority}</div>
+
+            </div>
+           </div>
+
+
+        </div>
+       `
+       document.getElementById("my_modal_5").showModal();
+
+ }
+
+
+
 //------------------------------------ all cards------------------------------------
 
 const displayCards=(cards)=>{
@@ -291,7 +402,7 @@ else if(card.status==="closed"){
 
      const cardBody=document.createElement("div");
         cardBody.innerHTML=`
-<div id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
+<div onclick="loadCardDetail(${card.id})" id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
     <div class="flex justify-between">
     <img src="./assets/${card.status}- Status .png" alt="" class="h-5">
 
