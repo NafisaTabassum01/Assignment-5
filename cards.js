@@ -9,11 +9,17 @@ const loadCards=() =>{
         console.log(allBtn)
         allBtn.classList.add("active")
        
+    projectAmount.innerText=data.data.length
 
         displayCards(data.data);
     })
 
 }
+
+// ----task-count--------
+const projectAmount=document.getElementById("project-amount")
+
+
 
 const removeActive=()=>{
     const loadButtons=document.querySelectorAll(".load-btn")
@@ -30,6 +36,11 @@ const loadCloseCards=() =>{
     .then((data)=>{
         const closeCards = data.data.filter(card => card.status === "closed");
         removeActive()
+
+        const projectAmount=document.getElementById("project-amount")
+projectAmount.innerText=closeCards.length
+
+
         const closeBtn=document.getElementById("close-btn");
         console.log(closeBtn)
         closeBtn.classList.add("active")
@@ -45,7 +56,7 @@ const displayCloseCards=(closeCards)=>{
 
     const cardContainer=document.getElementById("card-container");
     cardContainer.innerHTML="";
-    closeCards.forEach((closeCard)=>{
+    closeCards.forEach((closeCard,index)=>{
 let bgClass="";
 let textClass="";
 let borderTop="";
@@ -119,7 +130,7 @@ return `<div class="badge ${bgLabelClass} ${textLabelClass} text-[12px]">${label
 </div>
 <div class="text-[12px] text-[#64748B]">
 <hr class="border border-gray-200 mt-4">
-    <p>#1 by john_doe</p>
+    <p>#${index+1} by ${closeCard.author}</p>
 <p>1/15/2024</p>
 </div>
 
@@ -139,6 +150,9 @@ const loadOpenCards=() =>{
     .then((data)=>{
         const openCards = data.data.filter(card => card.status === "open");
                removeActive()
+const projectAmount=document.getElementById("project-amount")
+projectAmount.innerText=openCards.length
+
 
         const openBtn=document.getElementById("open-btn");
         console.log(openBtn)
@@ -155,7 +169,7 @@ const displayOpenCards=(openCards)=>{
 
     const cardContainer=document.getElementById("card-container");
     cardContainer.innerHTML="";
-    openCards.forEach((openCard)=>{
+    openCards.forEach((openCard,index)=>{
 let bgClass="";
 let textClass="";
 let borderTop="";
@@ -227,7 +241,7 @@ return `<div class="badge ${bgLabelClass} ${textLabelClass} text-[12px]">${label
 </div>
 <div class="text-[12px] text-[#64748B]">
 <hr class="border border-gray-200 mt-4">
-    <p>#1 by john_doe</p>
+    <p>#${index+1} by ${openCard.author}</p>
 <p>1/15/2024</p>
 </div>
 
@@ -244,7 +258,7 @@ cardContainer.append(openCardBody);
 const displayCards=(cards)=>{
     const cardContainer=document.getElementById("card-container");
     cardContainer.innerHTML="";
-    cards.forEach((card)=>{
+    cards.forEach((card,index)=>{
 
         let bgClass="";
         let textClass="";
@@ -319,8 +333,8 @@ return `<div class="badge ${bgLabelClass} ${textLabelClass} text-[12px]">${label
 </div>
 <div class="text-[12px] text-[#64748B]">
 <hr class="border border-gray-200 mt-4">
-    <p>#1 by john_doe</p>
-<p>1/15/2024</p>
+    <p>#${index+1} by ${card.author}</p>
+<p>${card.createdAt}</p>
 </div>
 
 </div>
