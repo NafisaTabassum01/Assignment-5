@@ -120,7 +120,7 @@ else if(closeCard.status==="closed"){
     <div class="flex justify-between">
     <img src="./assets/${closeCard.status}- Status .png" alt="" class="h-5">
 
-  <div class="badge ${bgClass} ${textClass} mb-4 py-3">${closeCard.priority}</div></div>
+  <div class="badge ${bgClass} ${textClass} mb-4 py-3">${closeCard.priority.toUpperCase()}</div></div>
     <h2 class="text-[14px] font-semibold">${closeCard.title}</h2>
     <p class="text-[12px] text-[#64748B] line-clamp-2 pt-3">${closeCard.description}</p>
 
@@ -152,7 +152,7 @@ textLabelClass="text-[#0e7490]";
 }
 
 
-return `<div class="badge ${bgLabelClass} ${textLabelClass} text-[12px]">${label}</div>`}).join('')}
+return `<div class="badge ${bgLabelClass} ${textLabelClass} text-[10px]">${label.toUpperCase()}</div>`}).join('')}
 
 
 </div>
@@ -231,7 +231,7 @@ else if(openCard.status==="closed"){
        <div onclick="loadCardDetail(${openCard.id})" id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
     <div class="flex justify-between">
     <img src="./assets/${openCard.status}- Status .png" alt="" class="h-5">
-  <div class="badge ${bgClass} ${textClass} mb-4 py-3">${openCard.priority}</div></div>
+  <div class="badge ${bgClass} ${textClass} mb-4 py-3">${openCard.priority.toUpperCase()}</div></div>
     <h2 class="text-[14px] font-semibold">${openCard.title}</h2>
     <p class="text-[12px] text-[#64748B] line-clamp-2 pt-3">${openCard.description}</p>
 
@@ -263,7 +263,7 @@ textLabelClass="text-[#0e7490]";
 }
 
 
-return `<div class="badge ${bgLabelClass} ${textLabelClass} text-[12px]">${label}</div>`}).join('')}
+return `<div class="badge ${bgLabelClass} ${textLabelClass} text-[10px]">${label.toUpperCase()}</div>`}).join('')}
 
 
 </div>
@@ -316,7 +316,7 @@ textClass="text-white"
              <div class="badge badge-success text-white font-medium text-[12px] rounded-2xl">${details.data.status}</div>
              <div class="w-1 h-1 rounded-full bg-[#64748B] mt-2"></div>
             <p class="text-[12px] text-[#64748B]">Opened by ${details.data.author}</p>
-                <div class="w-1 h-1 rounded-full bg-[#64748B] mt-2"></div><p class="text-[12px] text-[#64748B]">${details.data.createdAt}</p>
+                <div class="w-1 h-1 rounded-full bg-[#64748B] mt-2"></div><p class="text-[12px] text-[#64748B]">${details.data.updatedAt}</p>
            </div>
 
     
@@ -362,7 +362,7 @@ borderLabelClass="border-[#0891b2]";
 }
 
 
-return `<div class="badge border ${bgLabelClass} ${textLabelClass} ${borderLabelClass} text-[12px]">${label}</div>`}).join('')}
+return `<div class="badge border ${bgLabelClass} ${textLabelClass} ${borderLabelClass} text-[10px]">${label.toUpperCase()}</div>`}).join('')}
 
 </div>      
            </div>
@@ -378,7 +378,7 @@ return `<div class="badge border ${bgLabelClass} ${textLabelClass} ${borderLabel
 
             <div>
                 <p class="text-[16px] text-[#64748B]">Priority:</p>
-                <div class="badge rounded-2xl ${bgClass} ${textClass} text-[12px]">${details.data.priority}</div>
+                <div class="badge rounded-2xl ${bgClass} ${textClass} text-[12px]">${details.data.priority.toUpperCase()}</div>
 
             </div>
            </div>
@@ -434,7 +434,7 @@ else if(card.status==="closed"){
     <div class="flex justify-between">
     <img src="./assets/${card.status}- Status .png" alt="" class="h-5">
 
-  <div class="badge ${bgClass} ${textClass} mb-4 py-3">${card.priority}</div></div>
+  <div class="badge ${bgClass} ${textClass} mb-4 py-3">${card.priority.toUpperCase()}</div></div>
     <h2 class="text-[14px] font-semibold">${card.title}</h2>
     <p class="text-[12px] text-[#64748B] line-clamp-2 pt-3">${card.description}</p>
 
@@ -466,7 +466,7 @@ textLabelClass="text-[#0e7490]";
 }
 
 
-return `<div class="badge ${bgLabelClass} ${textLabelClass} text-[12px]">${label}</div>`}).join('')}
+return `<div class="badge ${bgLabelClass} ${textLabelClass} text-[10px]">${label.toUpperCase()}</div>`}).join('')}
 
 
 </div>
