@@ -118,7 +118,7 @@ else if(closeCard.status==="closed"){
        closeCardBody.innerHTML=`
        <div onclick="loadCardDetail(${closeCard.id})" id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
     <div class="flex justify-between">
-    <img src="./assets/${closeCard.status}- Status .png" alt="" class="h-5">
+    <img src="./assets/${closeCard.status}-Status.png" alt="" class="h-5">
 
   <div class="badge ${bgClass} ${textClass} mb-4 py-3">${closeCard.priority.toUpperCase()}</div></div>
     <h2 class="text-[14px] font-semibold">${closeCard.title}</h2>
@@ -230,7 +230,7 @@ else if(openCard.status==="closed"){
        openCardBody.innerHTML=`
        <div onclick="loadCardDetail(${openCard.id})" id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
     <div class="flex justify-between">
-    <img src="./assets/${openCard.status}- Status .png" alt="" class="h-5">
+    <img src="./assets/${openCard.status}-Status.png" alt="" class="h-5">
   <div class="badge ${bgClass} ${textClass} mb-4 py-3">${openCard.priority.toUpperCase()}</div></div>
     <h2 class="text-[14px] font-semibold">${openCard.title}</h2>
     <p class="text-[12px] text-[#64748B] line-clamp-2 pt-3">${openCard.description}</p>
@@ -432,7 +432,7 @@ else if(card.status==="closed"){
         cardBody.innerHTML=`
 <div onclick="loadCardDetail(${card.id})" id="card-body" class="bg-white shadow-lg rounded-lg p-5 h-[265px] border-t-4 ${borderTop}">
     <div class="flex justify-between">
-    <img src="./assets/${card.status}- Status .png" alt="" class="h-5">
+    <img src="./assets/${card.status}-Status.png" alt="" class="h-5">
 
   <div class="badge ${bgClass} ${textClass} mb-4 py-3">${card.priority.toUpperCase()}</div></div>
     <h2 class="text-[14px] font-semibold">${card.title}</h2>
