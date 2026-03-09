@@ -466,8 +466,8 @@ textLabelClass="text-[#0e7490]";
 }
 
 
-return `<div class="badge ${bgLabelClass} ${textLabelClass} text-[10px]">${label.toUpperCase()}</div>`}).join('')}
-
+return `<div class="badge ${bgLabelClass} ${textLabelClass} text-[10px]">
+ ${label.toUpperCase()}</div>`}).join('')}
 
 </div>
 <div class="text-[12px] text-[#64748B]">
