@@ -1,24 +1,28 @@
-1️⃣ What is the difference between var, let, and const?
+# 🚀 GitHub Issues Tracker
 
-ANS:var - It's Function scoped,redeclare and reassign both possible. 
-    let - It's Block scoped,reassign possible but redeclare not allowed. 
-    const -It's Block scoped, cannot reassign or redeclare. it's value stays constant.
+## 📌 Description
+GitHub Issues Tracker is a responsive web application that allows users to explore, filter, and search issues using a REST API. Users can view issues in different categories (All, Open, Closed), search dynamically, and open detailed issue information in a modal. The project is designed with a clean UI inspired by Figma and focuses on smooth user experience and functionality.
 
+---
 
-2️⃣ What is the spread operator (...)?
+## ✨ Specialities
+- 🔄 Dynamic issue filtering (All, Open, Closed)
+- 🔍 Real-time search functionality using API
+- 🧾 Modal-based detailed issue view
+- 🎯 Active tab highlighting system
+- 🟢🟣 Status-based UI indicators (Open & Closed)
+- ⏳ Loading spinner during API fetch
+- 📱 Fully responsive design for all devices
 
-ANS:It expands elements of an array or object into individual elements.
+---
 
-3️⃣ What is the difference between map(), filter(), and forEach()?
+## ⚙️ Technologies Used
+- HTML
+- CSS (Tailwind CSS / DaisyUI)
+- JavaScript (Vanilla JS)
+- REST API Integration
+- Fetch API
 
-ANS:map()- is used to transform elements in an array. It returns a new array with modified   values.
-filter()- It returns a new array with matching elements according to the condition.
-forEach()-It only runs a loop but does not return anything.
+---
 
-4️⃣ What is an arrow function?
-
-ANS:An arrow function is a shorter syntax to write functions in JavaScript using (=>).It is used for short and simple function.
-
-5️⃣ What are template literals?
-
-ANS:Template literals are strings written with backticks (`) that allow variable interpolation and multi-line strings easily.
+## 📅 Created By by Nafisa**
